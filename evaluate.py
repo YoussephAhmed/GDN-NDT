@@ -155,7 +155,7 @@ def get_val_performance_data(total_err_scores, normal_scores, gt_labels, topk=1)
 
     total_topk_err_scores = np.sum(np.take_along_axis(total_err_scores, topk_indices, axis=0), axis=0)
 
-    thresold = np.max(normal_scores) # comment this if u need dynamic threshold
+    #thresold = np.max(normal_scores) # comment this if u need dynamic threshold
     thresold = find_epsilon(normal_scores) # comment this if u need static method
     print("thresold", thresold)
 
